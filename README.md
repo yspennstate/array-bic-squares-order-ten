@@ -1,4 +1,6 @@
-# Array-bic squares of order ten and of every large order
+# Mutually orthogonal array-bic squares of order ten and of every large order
+
+The paper is `main.tex` (source) and `main.pdf`.
 
 `verify_moas.py` builds the three mutually orthogonal array-bic squares of order 7n+3 described in the paper
 "Mutually orthogonal array-bic squares of order ten and of every large order" (Y. Shmalo, 2026), and checks

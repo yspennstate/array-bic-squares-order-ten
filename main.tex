@@ -1,0 +1,580 @@
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm,url,booktabs}
+\newtheorem{theorem}{Theorem}\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\MOAS}{\mathrm{MOAS}}
+\title[Array-bic squares of order ten and of every large order]{Mutually orthogonal array-bic squares of order ten and of every large order}
+\author{Yitzchak Shmalo}
+\address{Einstein Institute of Mathematics, The Hebrew University of Jerusalem, Jerusalem, Israel}
+\subjclass[2020]{05B15, 05B25, 05C70}
+\keywords{array-bic square, regular antipodal plane, nearly generalised polygon, difference method, clique decomposition}
+\begin{document}
+\begin{abstract}
+Adriaensen, Bamberg and Williford showed that $s$ mutually orthogonal array-bic squares of order $s$ are equivalent
+to a regular antipodal plane of order $s$, found that three such squares do not exist for orders $5$, $6$ and $7$,
+and asked whether three exist for some order greater than seven. They do: we construct three of order $10$, and
+three of order $7n+3$ whenever $n$ is a product of prime powers each at least $5$. The squares of order $10$ extend
+the unique triple of order $3$, and $10$ is the least order at which such an extension is possible. Using Keevash's
+theorem on partite decompositions of typical graphs, we show that for each fixed $t$ there are $t$ mutually
+orthogonal array-bic squares of every sufficiently large order, and that every such system embeds in one of every
+sufficiently large order.
+\end{abstract}
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+A nearly generalised $n$-gon of order $s$, in the sense of Payne~\cite{Payne}, is an $(s+1)$-regular bipartite graph
+of girth $2n$ whose number of vertices exceeds the Moore bound by a small amount. Biggs and Ito~\cite{BiggsIto} proved
+that such graphs do not exist for $s>1$ and $n>3$. For $n=3$ they are the incidence graphs of regular antipodal planes,
+and Payne conjectured that a regular antipodal plane of order $s$ exists only for $s=2,3$. Adriaensen, Bamberg and
+Williford~\cite{ABW} proved that none exists for $4\le s\le14$ and gave several reformulations of the problem. One of them uses array-bic squares (Definition~\ref{def:abs}): a
+regular antipodal plane of order $s$ is equivalent to $s$ mutually orthogonal array-bic squares of order
+$s$~\cite[Proposition~2.20]{ABW}. Writing $\MOAS(s,t)$ for a set of $t$ mutually orthogonal array-bic squares of
+order $s$, they found by computer that $\MOAS(4,2)$ does not exist, that $\MOAS(s,2)$ exists and $\MOAS(s,3)$ does
+not for $s=5,6,7$, and that the $\MOAS(3,3)$ is unique up to symmetry~\cite[Section~2.4]{ABW}. Among the questions
+closing their paper is the following~\cite[Section~3, (Q3)]{ABW}.
+
+\begin{quote}
+Does there exist a $\MOAS(s,3)$ for $s>7$?
+\end{quote}
+
+We answer this question in the affirmative.
+
+\begin{theorem}\label{thm:ten}
+The three arrays of Table~\ref{tab:ten} form a $\MOAS(10,3)$, with positions $1$, $2$ and $3$. Their cells with
+row and column in $\{1,2,3\}$ form the $\MOAS(3,3)$ of~\cite[Example~2.18]{ABW}.
+\end{theorem}
+
+\begin{theorem}\label{thm:family}
+Let $n=1$ or let $n$ be a product of prime powers each at least $5$. Then a $\MOAS(7n+3,3)$ exists.
+\end{theorem}
+
+The hypothesis holds exactly when $2$ divides $n$ to the power $0$ or at least $3$ and $3$ divides $n$ to the power
+$0$ or at least $2$; so every $n$ prime to $6$ satisfies it, and so do $8$, $9$, $16$ and $27$. The orders obtained
+begin $10,38,52,59,66,80,94$. The squares of Theorem~\ref{thm:ten} extend the $\MOAS(3,3)$, and $10$ is the
+least order at which this can happen, by the following bound (subsystems are defined in Section~\ref{sec:def}).
+
+\begin{theorem}\label{thm:bound}
+Let $t\ge2$. If a $\MOAS(s,t)$ contains a $\MOAS(u,t)$ as a subsystem and $u<s$, then $s\ge u+1+t(u-1)$.
+\end{theorem}
+
+For $u=t=3$ the bound is $s\ge10$. The existence of a $\MOAS(s,3)$ remains open at $s=8$ and $9$, and at every
+order $s>10$ below the threshold of Theorem~\ref{thm:large} that is not covered by Theorem~\ref{thm:family}; by
+Theorem~\ref{thm:bound} a $\MOAS(8,3)$ or a $\MOAS(9,3)$ cannot contain a $\MOAS(3,3)$ as a subsystem. For a
+fixed number of squares the remaining orders are all covered once the order is large.
+
+\begin{theorem}\label{thm:large}
+Let $t\ge2$.
+\begin{enumerate}
+\item[(a)] There is $s_0(t)$ such that a $\MOAS(s,t)$ exists for every $s\ge s_0(t)$.
+\item[(b)] For every $\MOAS(u,t)$ there is $s_1$ such that for every $s\ge s_1$ it is a subsystem of some $\MOAS(s,t)$,
+with the same positions.
+\end{enumerate}
+\end{theorem}
+
+Theorem~\ref{thm:large} uses Keevash's theorem on partite clique decompositions of typical balanced graphs~\cite{KeevashCD,KeevashII}
+and gives no explicit value of $s_0(t)$. A regular antipodal plane of order $s$ corresponds to the case $t=s$, which
+is far outside the range of Theorem~\ref{thm:large}. For $u=t$, Theorem~\ref{thm:bound} says that a
+$\MOAS(t,t)$, that is a regular antipodal plane of order $t$, is a subsystem of a $\MOAS(s,t)$ with $s>t$ only if
+$s\ge t^2+1$.
+
+The squares of Theorem~\ref{thm:ten} are built by the difference method from four base cells: the three positions
+and seven further points indexed by $\mathbb F_7$ are moved by an automorphism of order $3$, which permutes the
+positions cyclically and multiplies $\mathbb F_7$ by $2$, and by the translations of $\mathbb F_7$
+(Section~\ref{sec:ten}). For Theorem~\ref{thm:family} the group $\mathbb F_7$ is replaced by $\mathbb F_7\times H$,
+where $H$ is an additive group of a product of finite fields, and the missing differences are supplied by the orbits of
+cells whose five coordinates lie on a line of $\mathbb F_7\times H$ (Section~\ref{sec:family}).
+Section~\ref{sec:bound} proves Theorem~\ref{thm:bound} and Section~\ref{sec:large} proves Theorem~\ref{thm:large}.
+
+\section{Definitions}\label{sec:def}
+By~\cite[Lemma~2.19]{ABW} the definitions depend on the point set only through its size, so we state them for an
+arbitrary finite point set $P$ with $|P|=s$; in~\cite{ABW} the point set is $[s]=\{1,\dots,s\}$. The symbol $0$ is
+not a point.
+
+\begin{definition}[{\cite[Definition~2.16]{ABW}}]\label{def:abs}
+Let $i\in P$. An \emph{array-bic square} on $P$ with \emph{position} $i$ is a map $A$ assigning to every pair
+$(x,y)\in P^2$ with $x\ne y$ a symbol $A(x,y)\in(\{0\}\cup P)\setminus\{i\}$ such that
+\begin{enumerate}
+\item[(i)] $A(x,i)=0$ for every $x\ne i$;
+\item[(ii)] for every $y\ne i$ the column $\{A(x,y):x\ne y\}$ contains every symbol of $P\setminus\{i\}$ exactly once;
+\item[(iii)] for every $x$ the row $\{A(x,y):y\ne x\}$ contains every symbol of $P\setminus\{i,x\}$ exactly once and,
+if $x\ne i$, also the symbol $0$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[{\cite[Definition~2.17]{ABW}}]\label{def:orth}
+Array-bic squares $A_i$ and $A_k$ on $P$ with distinct positions $i$ and $k$ are \emph{orthogonal} if every pair
+$(a,b)\in((\{0\}\cup P)\setminus\{i\})\times((\{0\}\cup P)\setminus\{k\})$ other than $(k,i)$ and the pairs $(c,c)$
+with $c\in(\{0\}\cup P)\setminus\{i,k\}$ occurs as $(A_i(x,y),A_k(x,y))$ for exactly one pair $x\ne y$, and the
+excluded pairs do not occur. A $\MOAS(s,t)$ is a set of $t$ pairwise orthogonal array-bic squares on a set of $s$
+points; their positions are then distinct.
+\end{definition}
+
+A cell of an array-bic square is a pair $(x,y)$ of distinct points; a square has $s(s-1)$ cells. We record a cell of
+a $\MOAS(s,t)$ with positions $i_1,\dots,i_t$ as the tuple $(x,y;A_{i_1}(x,y),\dots,A_{i_t}(x,y))$, and call its
+entries its \emph{coordinates}: the row, the column and the outputs.
+
+\begin{definition}\label{def:sub}
+Let $\{A_i\}$ be a $\MOAS(s,t)$ on $P$, and let $U\subseteq P$ contain all positions. If $A_i(x,y)\in\{0\}\cup U$
+for all distinct $x,y\in U$ and all $i$, and the restrictions of the $A_i$ to the cells in $U$ form a $\MOAS(|U|,t)$ on
+$U$, we call these restrictions a \emph{subsystem} on $U$.
+\end{definition}
+
+All the conditions in Definitions~\ref{def:abs} and~\ref{def:orth} are statements about how often a given pair of values
+occurs in a given pair of coordinates. We use them in that form. Let a finite family of tuples
+$(x,y;a_1,\dots,a_t)$ with $x,y\in P$ and $a_1,\dots,a_t\in\{0\}\cup P$ be given, together with distinct positions
+$\iota_1,\dots,\iota_t\in P$. For coordinates $\alpha,\beta$ and values $p,q$ let $N_{\alpha\beta}(p,q)$ be the number
+of tuples with $\alpha$-coordinate $p$ and $\beta$-coordinate $q$. Write $R$ and $C$ for the row and column
+coordinates, and $j$ for the output in position $\iota_j$. The family is the set of cells of a $\MOAS(s,t)$ with
+these positions if and only if
+\begin{equation}\label{eq:cell}
+N_{RC}(x,y)=1 \text{ if } x\ne y,\qquad N_{RC}(x,x)=0,
+\end{equation}
+and, for all $j\ne k$,
+\begin{align}
+N_{Rj}(x,v)&=\begin{cases}1,& \text{if } v\in P\setminus\{\iota_j,x\}, \text{ or } v=0 \text{ and } x\ne\iota_j,\\
+0,&\text{otherwise};\end{cases}\label{eq:row}\\
+N_{Cj}(y,v)&=\begin{cases}1,& \text{if } y\ne \iota_j \text{ and } v\in P\setminus\{\iota_j\},\\
+s-1,& \text{if } y=\iota_j \text{ and } v=0,\\ 0,&\text{otherwise};\end{cases}\label{eq:col}\\
+N_{jk}(a,b)&=\begin{cases}1,& \text{if $(a,b)$ is a pair allowed in Definition~\ref{def:orth}},\\
+0,&\text{otherwise}.\end{cases}\label{eq:orth}
+\end{align}
+Here $x$ and $y$ range over $P$ and $v$ over $\{0\}\cup P$. Indeed~\eqref{eq:cell} says that the tuples are indexed by
+the cells, one tuple for each cell, and so define $t$ arrays $A_{\iota_j}(x,y)=a_j$. Then~\eqref{eq:row} says that row $x$ of $A_{\iota_j}$ consists of the symbols required by (iii), which are $s-1$ in
+number, so it also forces every symbol to lie in $(\{0\}\cup P)\setminus\{\iota_j\}$;~\eqref{eq:col} is (i) and (ii),
+since column $\iota_j$ has $s-1$ cells; and~\eqref{eq:orth} is Definition~\ref{def:orth}.
+
+\section{Development over an abelian group}\label{sec:dev}
+Let $G$ be a finite abelian group, written additively, and let $I=\{\iota_1,\iota_2,\iota_3\}$ be a set of three
+points disjoint from $G$. The point set is $P=I\cup G$, so $s=|G|+3$, and the three squares have positions
+$\iota_1,\iota_2,\iota_3$. Call the elements of $F=I\cup\{0\}$ \emph{fixed} and the elements of $G$ \emph{moving}. A
+\emph{record} is a tuple $r=(r_R,r_C;r_1,r_2,r_3)$ with entries in $F\cup G$, and for $g\in G$ the translate
+$r+g$ adds $g$ to every moving entry and keeps every fixed entry.
+
+\begin{lemma}\label{lem:dev}
+Let $B$ be a finite list of records with the following properties.
+\begin{enumerate}
+\item[(F)] Every record of $B$ has at most one fixed entry, except that for each $j\in\{1,2,3\}$ there is exactly one
+record with $r_C=\iota_j$ and $r_j=0$, whose other three entries are moving. The fixed entries of the records with
+exactly one fixed entry are, each exactly once: $r_R=\iota_x$ for $x=1,2,3$, and $r_j=\iota_k$ for the six pairs $j\ne k$.
+\item[(D)] For every pair of coordinates $\alpha\ne\beta$ and every $\delta\in G$, the number of records of $B$ with
+$r_\alpha,r_\beta\in G$ and $r_\beta-r_\alpha=\delta$ is $1$ if $\delta\ne0$; if $\delta=0$ it is $1$ when
+$\{\alpha,\beta\}=\{C,j\}$ for some $j$, and $0$ otherwise.
+\end{enumerate}
+Let $T$ be the six tuples of the $\MOAS(3,3)$ of~\cite[Example~2.18]{ABW} on the points $\iota_1,\iota_2,\iota_3$ with
+positions $\iota_1,\iota_2,\iota_3$. Then $T$ together with all translates $r+g$, $r\in B$, $g\in G$, is a
+$\MOAS(|G|+3,3)$ on $I\cup G$, and $T$ is a subsystem on $I$.
+\end{lemma}
+
+\begin{proof}
+First the count of tuples. By (D) for the pair $(R,C)$, the records with moving row and column number $|G|-1$; by (F)
+there are three with fixed row and three with fixed column. So $|B|=|G|+5$ and there are
+$6+|G|(|G|+5)=(|G|+2)(|G|+3)=s(s-1)$ tuples. We verify~\eqref{eq:cell}--\eqref{eq:orth}. Fix coordinates
+$\alpha\ne\beta$ and values $p,q$.
+
+\emph{Both values moving.} A translate $r+g$ has $\alpha$-coordinate $p$ and $\beta$-coordinate $q$ exactly when
+$r_\alpha,r_\beta\in G$, $g=p-r_\alpha$ and $r_\beta-r_\alpha=q-p$. So $N_{\alpha\beta}(p,q)$ is the number in (D) for
+$\delta=q-p$, and the tuples of $T$ do not contribute. The required values are: for $(R,C)$, $1$ if $q\ne p$ and $0$ if
+$q=p$; for $(R,j)$, the same, since $q\in P\setminus\{\iota_j,p\}$ means $q\ne p$; for $(C,j)$, always $1$, since a
+moving column is not $\iota_j$; for $(j,k)$, $1$ if $p\ne q$ and $0$ if $p=q$, since moving values are never
+$\iota_j$ or $\iota_k$. These are the numbers in (D).
+
+\emph{One value fixed.} If $p$ is fixed and $q$ is moving, each record with $r_\alpha=p$ and $r_\beta\in G$ has exactly
+one translate with $\beta$-coordinate $q$, so $N_{\alpha\beta}(p,q)$ is the number of such records. By (F) the
+records with a given fixed entry have all other entries moving except in the records with $r_C=\iota_j$, $r_j=0$. The
+required values, all read from~\eqref{eq:row}--\eqref{eq:orth} with the fixed value in the coordinate indicated, are
+\begin{itemize}
+\item row $\iota_x$ against a moving column or output: $1$; this is the record with $r_R=\iota_x$;
+\item column $\iota_y$ against a moving row: $1$; against a moving output $j$: $1$ if $j\ne y$ and $0$ if $j=y$; this is
+the record with $r_C=\iota_y$, $r_y=0$, whose output $y$ is fixed;
+\item output $j$ equal to $\iota_k$ against a moving row, column or output: $1$ if $k\ne j$ and $0$ if $k=j$; these are
+the six records with $r_j=\iota_k$, $k\ne j$;
+\item output $j$ equal to $0$ against a moving row or a moving output: $1$; against a moving column: $0$; this is the
+record with $r_C=\iota_j$, $r_j=0$, whose column is fixed.
+\end{itemize}
+The case of $p$ moving and $q$ fixed is the same with the roles of $\alpha$ and $\beta$ exchanged.
+
+\emph{Both values fixed.} Then $N_{\alpha\beta}(p,q)$ is the number of tuples of $T$ with these coordinates plus $|G|$
+times the number of records of $B$ with $r_\alpha=p$ and $r_\beta=q$. By (F) the only records with two fixed entries
+are those with $r_C=\iota_j$, $r_j=0$, one for each $j$; they contribute $|G|=s-3$ to $N_{Cj}(\iota_j,0)$ and nothing
+elsewhere. The tuples of $T$ form a $\MOAS(3,3)$ on $I$, so they satisfy~\eqref{eq:cell}--\eqref{eq:orth} with $s=3$
+and $P=I$, and they never use a moving value. Comparing with~\eqref{eq:cell}--\eqref{eq:orth} for $P=I\cup G$ restricted
+to fixed values: the required counts are the same as for $s=3$, except $N_{Cj}(\iota_j,0)$, which is $s-1=2+|G|$
+instead of $2$. The difference is supplied by the records just named. This proves the conditions for fixed values.
+
+All cases are covered, so the family is a $\MOAS(s,3)$. The cells with row and column in $I$ are the tuples of $T$,
+since no record has a fixed row and a fixed column, so $T$ is a subsystem on $I$.
+\end{proof}
+
+\section{Order ten}\label{sec:ten}
+Take $G=\mathbb F_7$, and write $o_u$ for the point $u\in\mathbb F_7$, to distinguish it from the symbol $0$. Let
+$\sigma$ be the permutation of $F\cup G$ that fixes $0$, maps $\iota_k\mapsto\iota_{k+1}$ (indices modulo $3$) and
+$o_u\mapsto o_{2u}$, and for a record set
+\[
+\rho(r_R,r_C;r_1,r_2,r_3)=(\sigma r_R,\sigma r_C;\sigma r_3,\sigma r_1,\sigma r_2).
+\]
+Since $2^3=1$ in $\mathbb F_7$, $\rho^3$ is the identity. In the language of~\cite[Lemma~2.19]{ABW}, $\rho$ is the
+relabelling of the points by $\sigma$, which carries the square in position $\iota_k$ to the square in position
+$\iota_{k+1}$. Let $B$ consist of the four records
+\[
+(\iota_1,o_0;o_0,o_3,o_4),\quad(o_0,\iota_1;0,o_1,o_4),\quad(o_0,o_1;\iota_2,o_6,o_3),\quad(o_0,o_5;\iota_3,o_4,o_6)
+\]
+and their images under $\rho$ and $\rho^2$. The twelve records are listed in Table~\ref{tab:base}.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{ccccc@{\qquad}ccccc}
+\toprule
+row & column & $1$ & $2$ & $3$ & row & column & $1$ & $2$ & $3$\\
+\midrule
+$\iota_1$ & $o_0$ & $o_0$ & $o_3$ & $o_4$ & $o_0$ & $o_1$ & $\iota_2$ & $o_6$ & $o_3$\\
+$\iota_2$ & $o_0$ & $o_1$ & $o_0$ & $o_6$ & $o_0$ & $o_2$ & $o_6$ & $\iota_3$ & $o_5$\\
+$\iota_3$ & $o_0$ & $o_5$ & $o_2$ & $o_0$ & $o_0$ & $o_4$ & $o_3$ & $o_5$ & $\iota_1$\\
+$o_0$ & $\iota_1$ & $0$ & $o_1$ & $o_4$ & $o_0$ & $o_5$ & $\iota_3$ & $o_4$ & $o_6$\\
+$o_0$ & $\iota_2$ & $o_1$ & $0$ & $o_2$ & $o_0$ & $o_3$ & $o_5$ & $\iota_1$ & $o_1$\\
+$o_0$ & $\iota_3$ & $o_4$ & $o_2$ & $0$ & $o_0$ & $o_6$ & $o_2$ & $o_3$ & $\iota_2$\\
+\bottomrule
+\end{tabular}
+\caption{The twelve base records for order $10$. In each half of the table the first and fourth lines are two of the
+four records displayed above, and the two lines below each are its images under $\rho$ and $\rho^2$.}\label{tab:base}
+\end{table}
+
+\begin{proof}[Proof of Theorem~\ref{thm:ten}]
+Condition (F) of Lemma~\ref{lem:dev} can be read from Table~\ref{tab:base}: the first record and its images give
+$r_R=\iota_1,\iota_2,\iota_3$; the second and its images give $r_C=\iota_j$ with $r_j=0$; the third and fourth and
+their images give $r_j=\iota_{j+1}$ and $r_j=\iota_{j-1}$; every other entry is moving. For (D), number the records
+$1$--$6$ down the left block of Table~\ref{tab:base} and $7$--$12$ down the right block. Table~\ref{tab:diff} gives, for
+each pair of coordinates $(\alpha,\beta)$ and each record whose $\alpha$- and $\beta$-coordinates are both moving, the
+difference $r_\beta-r_\alpha\in\mathbb F_7$. In each of the three rows $(C,j)$ the entries are $0,1,\dots,6$, each once,
+and in each of the other seven rows they are $1,2,\dots,6$, each once. This is condition (D).
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{lcccccccccccc}
+\toprule
+pair & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$ & $11$ & $12$\\
+\midrule
+$(R,C)$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & 1 & 2 & 4 & 5 & 3 & 6 \\
+$(R,1)$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & 1 & 4 & $\cdot$ & 6 & 3 & $\cdot$ & 5 & 2 \\
+$(R,2)$ & $\cdot$ & $\cdot$ & $\cdot$ & 1 & $\cdot$ & 2 & 6 & $\cdot$ & 5 & 4 & $\cdot$ & 3 \\
+$(R,3)$ & $\cdot$ & $\cdot$ & $\cdot$ & 4 & 2 & $\cdot$ & 3 & 5 & $\cdot$ & 6 & 1 & $\cdot$ \\
+$(C,1)$ & 0 & 1 & 5 & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & 4 & 6 & $\cdot$ & 2 & 3 \\
+$(C,2)$ & 3 & 0 & 2 & $\cdot$ & $\cdot$ & $\cdot$ & 5 & $\cdot$ & 1 & 6 & $\cdot$ & 4 \\
+$(C,3)$ & 4 & 6 & 0 & $\cdot$ & $\cdot$ & $\cdot$ & 2 & 3 & $\cdot$ & 1 & 5 & $\cdot$ \\
+$(1,2)$ & 3 & 6 & 4 & $\cdot$ & $\cdot$ & 5 & $\cdot$ & $\cdot$ & 2 & $\cdot$ & $\cdot$ & 1 \\
+$(1,3)$ & 4 & 5 & 2 & $\cdot$ & 1 & $\cdot$ & $\cdot$ & 6 & $\cdot$ & $\cdot$ & 3 & $\cdot$ \\
+$(2,3)$ & 1 & 6 & 5 & 3 & $\cdot$ & $\cdot$ & 4 & $\cdot$ & $\cdot$ & 2 & $\cdot$ & $\cdot$ \\
+\bottomrule
+\end{tabular}
+\caption{The differences $r_\beta-r_\alpha$ of the twelve base records; a dot marks a record in which one of the two
+coordinates is fixed.}\label{tab:diff}
+\end{table}
+
+Lemma~\ref{lem:dev}
+now shows that the tuples of~\cite[Example~2.18]{ABW} together with the $84$ translates form a $\MOAS(10,3)$ on
+$I\cup\mathbb F_7$ with the $\MOAS(3,3)$ as a subsystem on $I$. Writing $\iota_k$ as $k$ and $o_u$ as $u+4$ gives the
+arrays of Table~\ref{tab:ten}.
+\end{proof}
+
+\begin{table}[ht]
+\centering\footnotesize
+\setlength{\arraycolsep}{2.6pt}
+\[
+A_1=\begin{array}{cccccccccc}
+\cdot&3&2&4&5&6&7&8&9&10\\
+0&\cdot&3&5&6&7&8&9&10&4\\
+0&2&\cdot&9&10&4&5&6&7&8\\
+0&5&8&\cdot&2&10&9&7&3&6\\
+0&6&9&7&\cdot&2&4&10&8&3\\
+0&7&10&3&8&\cdot&2&5&4&9\\
+0&8&4&10&3&9&\cdot&2&6&5\\
+0&9&5&6&4&3&10&\cdot&2&7\\
+0&10&6&8&7&5&3&4&\cdot&2\\
+0&4&7&2&9&8&6&3&5&\cdot
+\end{array}\qquad
+A_2=\begin{array}{cccccccccc}
+\cdot&0&3&7&8&9&10&4&5&6\\
+3&\cdot&1&4&5&6&7&8&9&10\\
+1&0&\cdot&6&7&8&9&10&4&5\\
+5&0&6&\cdot&10&3&1&9&8&7\\
+6&0&7&8&\cdot&4&3&1&10&9\\
+7&0&8&10&9&\cdot&5&3&1&4\\
+8&0&9&5&4&10&\cdot&6&3&1\\
+9&0&10&1&6&5&4&\cdot&7&3\\
+10&0&4&3&1&7&6&5&\cdot&8\\
+4&0&5&9&3&1&8&7&6&\cdot
+\end{array}
+\]
+\[
+A_3=\begin{array}{cccccccccc}
+\cdot&2&0&8&9&10&4&5&6&7\\
+1&\cdot&0&10&4&5&6&7&8&9\\
+2&1&\cdot&4&5&6&7&8&9&10\\
+8&6&0&\cdot&7&9&5&1&10&2\\
+9&7&0&2&\cdot&8&10&6&1&4\\
+10&8&0&5&2&\cdot&9&4&7&1\\
+4&9&0&1&6&2&\cdot&10&5&8\\
+5&10&0&9&1&7&2&\cdot&4&6\\
+6&4&0&7&10&1&8&2&\cdot&5\\
+7&5&0&6&8&4&1&9&2&\cdot
+\end{array}
+\]
+\caption{A $\MOAS(10,3)$ with positions $1,2,3$. Rows and columns are indexed $1,\dots,10$; the entry in row $x$ and
+column $y$ of $A_i$ is $A_i(x,y)$.}\label{tab:ten}
+\end{table}
+
+\begin{remark}\label{rem:aut}
+By construction the system is invariant under the group generated by the translations of $\mathbb F_7$ and the
+relabelling $\sigma$, acting as in~\cite[Lemma~2.19]{ABW}. This group is the Frobenius group of order $21$; it permutes
+the three squares cyclically, and its orbits on the $90$ cells are the six cells in $I$, which form two orbits of size
+three, and four orbits of size $21$, one for each of the four records in Table~\ref{tab:base}.
+\end{remark}
+
+\section{An infinite family}\label{sec:family}
+Let $n=q_1\cdots q_m$ with each $q_l$ a prime power, $q_l\ge5$, and let $H=\mathbb F_{q_1}\times\dots\times\mathbb F_{q_m}$
+as an additive group, so $|H|=n$; for $n=1$ the group $H$ is trivial and the construction below is that of
+Section~\ref{sec:ten}. In each field $\mathbb F_{q_l}$ choose distinct elements $c_{l,0}=0,c_{l,1},\dots,c_{l,4}$, which
+is possible since $q_l\ge5$, and write $c_k=(c_{1,k},\dots,c_{m,k})\in H$, acting on $H$ by coordinatewise
+multiplication. Let $G=\mathbb F_7\times H$ and for $k=0,\dots,4$ define $\varphi_k\colon G\to G$ by
+$\varphi_k(a,h)=(ka,c_kh)$.
+
+\begin{lemma}\label{lem:lines}
+For $0\le k<l\le4$ the map $\varphi_l-\varphi_k$ is a bijection of $G$ that maps $G^*=\{(a,h):h\ne0\}$ onto itself and
+$\mathbb F_7\times\{0\}$ onto itself.
+\end{lemma}
+
+\begin{proof}
+$(\varphi_l-\varphi_k)(a,h)=((l-k)a,(c_l-c_k)h)$. Since $1\le l-k\le4$, multiplication by $l-k$ is a bijection of
+$\mathbb F_7$, and in each factor $\mathbb F_{q_j}$ multiplication by $c_{j,l}-c_{j,k}\ne0$ is a bijection. The map
+preserves the set of $(a,h)$ with $h=0$, hence also its complement.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:family}]
+Identify $\mathbb F_7$ with $\mathbb F_7\times\{0\}\subseteq G$, so that the twelve records of Table~\ref{tab:base} are
+records over $G$. For $d\in G^*$ let
+\[
+E_d=(\varphi_0(d),\varphi_1(d);\varphi_2(d),\varphi_3(d),\varphi_4(d)),
+\]
+whose entries are all moving, and let $B$ consist of the twelve records of Table~\ref{tab:base} and the records $E_d$,
+$d\in G^*$. We check the hypotheses of Lemma~\ref{lem:dev}. Condition (F) holds because it holds for the twelve
+records and the records $E_d$ have no fixed entries. For (D), take coordinates $\alpha\ne\beta$, the $k$-th and the
+$l$-th entries of a record with $k<l$ in the order $R,C,1,2,3$, and $\delta\in G$. The twelve records have their moving
+entries in $\mathbb F_7\times\{0\}$, so by Section~\ref{sec:ten} they contribute one record with difference $\delta$
+for each $\delta\in(\mathbb F_7\times\{0\})\setminus\{0\}$, and, when $\{\alpha,\beta\}=\{C,j\}$, one for $\delta=0$;
+they contribute nothing for $\delta\in G^*$. The record $E_d$ has difference $(\varphi_l-\varphi_k)(d)$, and by
+Lemma~\ref{lem:lines} each $\delta\in G^*$ arises from exactly one $d\in G^*$, while no $\delta$ with zero second
+component arises. Together this is (D). Lemma~\ref{lem:dev} gives a $\MOAS(|G|+3,3)=\MOAS(7n+3,3)$.
+\end{proof}
+
+When $n$ is prime to $6$ one may take $H=\mathbb Z/n\mathbb Z$ with $c_k=k$, since $1,\dots,4$ are then invertible
+modulo $n$; the proof is the same.
+
+\section{The extension bound}\label{sec:bound}
+\begin{proof}[Proof of Theorem~\ref{thm:bound}]
+Let $\{A_i\}$ be a $\MOAS(s,t)$ on $P$ with a subsystem on $U$, $|U|=u<s$, and let $\iota_1,\dots,\iota_t\in U$ be the
+positions. Fix a point $x\in P\setminus U$. For each $j$, row $x$ of $A_{\iota_j}$ contains every symbol of
+$U\setminus\{\iota_j\}$, since these lie in $P\setminus\{\iota_j,x\}$; these are $u-1$ symbols, in $u-1$ distinct
+cells $(x,y)$.
+
+No such cell has $y\in U$. If $y=\iota_j$ the entry is $0$. If $y\in U\setminus\{\iota_j\}$, the column $y$ of the
+subsystem square restricted to $U$ already contains every symbol of $U\setminus\{\iota_j\}$ in its $u-1$ cells with row
+in $U$, so by condition (ii) the cell $(x,y)$ cannot contain another one.
+
+For $j\ne k$ no cell $(x,y)$ has $A_{\iota_j}(x,y)\in U\setminus\{\iota_j\}$ and $A_{\iota_k}(x,y)\in U\setminus\{\iota_k\}$.
+Such a pair $(a,b)$ is either excluded by Definition~\ref{def:orth} (when $a=b$ or $(a,b)=(\iota_k,\iota_j)$) or
+allowed, and every allowed pair with both entries in $\{0\}\cup U$ already occurs in a cell of the subsystem, because
+the subsystem is itself a $\MOAS(u,t)$ on $U$; in either case it cannot occur in the cell $(x,y)$.
+
+Hence the $t(u-1)$ cells found above are distinct cells $(x,y)$ with $y\in P\setminus(U\cup\{x\})$, a set of $s-u-1$
+columns. So $s-u-1\ge t(u-1)$.
+\end{proof}
+
+\section{Every large order}\label{sec:large}
+We encode a $\MOAS(s,t)$ by a clique decomposition of a partite graph and apply the theorem of Keevash on partite
+decompositions. We state the special case we use. Let $\Gamma$ be a graph whose vertex set is partitioned into parts
+$V_1,\dots,V_q$, with every edge joining two different parts. For distinct parts let
+$d_{ab}=e(V_a,V_b)/(|V_a|\,|V_b|)$. The graph is \emph{$K_q$-balanced} if $e(V_a,V_b)$ is the same for all pairs of
+parts and every vertex has the same number of neighbours in each part other than its own. It is
+\emph{$(c,h)$-typical} if for every $h'\le h$, all distinct vertices $v_1,\dots,v_{h'}$ and every part $V_a$ containing
+none of them, with $v_j\in V_{a_j}$,
+\[
+\Bigl|V_a\cap\bigcap_{j\le h'}N(v_j)\Bigr|=(1\pm h'c)\,|V_a|\prod_{j\le h'}d_{a_ja}.
+\]
+A \emph{partite $K_q$-decomposition} is a partition of the edges into copies of $K_q$ with one vertex in each part.
+
+\begin{theorem}[{Keevash~\cite[Theorem~2.4]{KeevashCD},~\cite[Theorem~1.7]{KeevashII}, for graphs and $\mathcal H=K_q$}]\label{thm:keevash}
+Let $q\ge2$, $h=2^{50q^3}$ and $\delta=2^{-10^3q^5}$. There are $c_0=c_0(q)>0$ and $N_0=N_0(q)$ such that the following
+holds. Let $N>N_0$, let $d>2N^{-\delta/h^q}$ and $0<c<c_0d^{h^{30q}}$, and let $\Gamma$ be a $K_q$-balanced,
+$(c,h^q)$-typical graph with parts $V_1,\dots,V_q$ of sizes between $N/h$ and $N$ and with $d_{ab}>d$ for all pairs of
+parts. Then $\Gamma$ has a partite $K_q$-decomposition.
+\end{theorem}
+
+In~\cite{KeevashCD} the theorem is stated for an $r$-graph $\mathcal H$ on $[q]$ and an $\mathcal H$-blowup; for $r=2$ and $\mathcal H=K_q$ the
+typicality and balance conditions there are the ones above. We use only that $h$, $\delta$ and $c_0$ depend on $q$
+alone.
+
+\begin{proof}[Proof of Theorem~\ref{thm:large}(a)]
+Let $P=[s]$ and let $I\subseteq P$, $|I|=t$, be the set of positions. Take disjoint vertex sets: $X=P$ (rows),
+$Y=P\setminus I$ (ordinary columns), and for $j\in I$ a set $S_j$, a copy of $P\setminus\{j\}$ (the positive
+symbols of the square in position $j$); a vertex of $S_j$ carrying the label $a$ is written $a$ when the part is
+clear. Let $\Gamma_0$ be the $(t+2)$-partite graph with the following edges, for labels $x,y,a,b$:
+\begin{align*}
+&x\in X\sim y\in Y \iff x\ne y; && x\in X\sim a\in S_j\iff x\ne a;\\
+&y\in Y\sim a\in S_j \text{ always}; && a\in S_j\sim b\in S_k\iff a\ne b,\ (a,b)\ne(k,j).
+\end{align*}
+An ordinary cell $(x,y)$, $y\in Y$, with outputs $a_j\in S_j$ satisfying the conditions of Definitions~\ref{def:abs}
+and~\ref{def:orth} is a $(t+2)$-clique of $\Gamma_0$; a cell $(x,i)$ in the column of position $i$ has output $0$ in
+square $i$ and corresponds to a $t$-clique on $X$ and the parts $S_j$, $j\ne i$. Conversely we shall choose, for
+every $i\in I$, $s-1$ vertex-disjoint such $t$-cliques, one through every $x\ne i$ and one through every vertex of each
+$S_j$, $j\ne i$, with all these cliques edge-disjoint; and then a partite $K_{t+2}$-decomposition of the remaining
+graph. Such a choice gives a $\MOAS(s,t)$: each full clique is read as the cell indexed by its $X$--$Y$ edge, which
+determines the cell uniquely, and the clique chosen through $x$ in step $i$ is the cell $(x,i)$, with output $0$ in
+square $i$. Every $X$--$Y$ edge lies in exactly one clique, so every ordinary cell receives exactly one tuple. Each
+$X$--$S_j$ edge lies in exactly one clique, which is~\eqref{eq:row} for positive symbols; the symbol $0$ of square $j$
+appears in row $x\ne j$ exactly in the cell $(x,j)$. Each $Y$--$S_j$ edge lies in exactly one clique, and column $i$ of
+square $j\ne i$ meets every vertex of $S_j$ once; this is~\eqref{eq:col}. Each $S_j$--$S_k$ edge lies in exactly one
+clique, which gives~\eqref{eq:orth} for pairs of positive symbols, and the pairs $(0,b)$ and $(a,0)$ occur exactly in
+the columns $j$ and $k$, once for each positive $b$, respectively $a$; the pair $(0,0)$ does not occur because a cell
+has at most one zero.
+
+\emph{The columns of the positions.} Treat the $i\in I$ one at a time, and for a fixed $i$ adjoin the parts $S_j$,
+$j\in I\setminus\{i\}$, one at a time to the list of rows $x\ne i$. At each stage we have $s-1$ partial tuples and must
+match them to the $s-1$ vertices of the next part $S_j$, so that every new pair is an edge of $\Gamma_0$ not used by a
+previously chosen column. Call a vertex $w$ of $S_j$ \emph{forbidden} for a vertex $v$ of another part if $vw$ is not
+an edge of $\Gamma_0$ or was used by an earlier column. From the definition of $\Gamma_0$, a vertex $v$ has at most one
+non-neighbour in each other part, and each of the at most $t-1$ earlier columns used at most one edge at $v$ into
+$S_j$; so at most $t$ vertices of $S_j$ are forbidden for $v$. A partial tuple has at most $t-1$ entries, so at most
+$t(t-1)$ vertices of $S_j$ are forbidden for one of its entries. Conversely, a vertex $w$ of $S_j$ is forbidden for at
+most $t$ vertices of each of the at most $t-1$ parts already in the tuples, by the same count, and each vertex of
+such a part is an entry of exactly one partial tuple; so $w$ is forbidden for an entry of at most $t(t-1)$ partial
+tuples. Within the current column the new edges are distinct, because the partial tuples have distinct entries in each
+part and are matched to distinct vertices of $S_j$. The bipartite graph of allowed pairs between the $s-1$ partial
+tuples and $S_j$ therefore has minimum degree at least $s-1-t(t-1)\ge s-t^2\ge(s-1)/2$ for $s\ge2t^2$, and such a balanced bipartite graph has a perfect matching by Hall's
+theorem (a set $S$ of size at most $(s-1)/2$ has at least $(s-1)/2\ge|S|$ neighbours, and a larger set meets the
+neighbourhood of every vertex on the other side). This chooses all the $t$-cliques.
+
+\emph{Balance of the remaining graph.} Let $\Gamma$ be $\Gamma_0$ with the edges of the chosen $t$-cliques removed. A
+vertex $y\in Y$ has $s-1$ neighbours in every other part. A vertex $a\in S_j$ had $s-1$ neighbours in $X$, of which
+the $t-1$ columns $i\ne j$ used one each; $s-t$ in $Y$, none used; and $s-2$ in $S_k$ (the label $a$ is excluded if
+$a\ne k$, the label $j$ if $a=k$), of which the $t-2$ columns $i\notin\{j,k\}$ used one each. So $a$ has $s-t$
+neighbours in every other part. A row $x$ has $s-t-[x\notin I]$ neighbours in $Y$; in $S_j$ it had $s-1$ if $x=j$ and
+$s-2$ otherwise, and the columns $i\in I\setminus\{j,x\}$ used one each, leaving $s-t-[x\notin I]$ again. Thus every
+vertex has the same number of neighbours in each other part, and summing over a part gives
+$e(V_a,V_b)=(s-t)(s-1)$ for every pair of parts. So $\Gamma$ is $K_{t+2}$-balanced.
+
+\emph{Typicality.} Every part has between $s-t$ and $s$ vertices, and every vertex of $\Gamma$ has at least $s-t-1$
+neighbours in each other part, so at most $t+1$ non-neighbours there. The parts have sizes $s$, $s-t$ and $s-1$, so the
+densities $d_{ab}=(s-t)(s-1)/(|V_a|\,|V_b|)$ are $1-1/s$, $1-t/s$, $1$ and $(s-t)/(s-1)$, all in $[1-t/s,1]$. Let
+$h'\le h^q$, with $q=t+2$, and suppose $s\ge2h^q(t+1)$. The product of $h'$ densities lies in $[1-h't/s,1]$, and the
+common neighbourhood of $h'$ vertices in a part $V_a$ has between $|V_a|-h'(t+1)$ and $|V_a|$ elements. Since
+$h'(t+1)/s\le1/2$ and $|V_a|\ge s-t\ge s/2$, the ratio of the two sides of the typicality identity lies in $[1-2h'(t+1)/s,\,1+2h'(t+1)/s]$. So
+$\Gamma$ is $(c,h^q)$-typical as soon as also $s\ge2(t+1)/c$.
+
+Now apply Theorem~\ref{thm:keevash} with $q=t+2$, $N=s$ and $d=1/2$, and fix $c$ with $0<c<c_0(1/2)^{h^{30q}}$. For
+$s$ large, $1/2>2s^{-\delta/h^q}$, the parts have sizes between $s/h$ and $s$, all densities exceed $1/2$, and $\Gamma$
+is $(c,h^q)$-typical. So $\Gamma$ has a partite $K_{t+2}$-decomposition, and the $\MOAS(s,t)$ follows.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:large}(b)]
+By~\cite[Lemma~2.19]{ABW} we may assume that the given $\MOAS(u,t)$ is a system on $U=[u]$ and that $I\subseteq U$. Construct $\Gamma_0$ for
+$P=[s]$ as above. The cells of the given system with row and column in $U$ are cliques of $\Gamma_0$: full cliques for
+ordinary columns $y\in U\setminus I$, and $t$-cliques for the columns in $I$. They are edge-disjoint, because two of
+them sharing an edge would repeat a row entry, a column entry or an output pair of the given system. Reserve them. In
+the step for the column $i\in I$ the rows in $U\setminus\{i\}$ are already matched, to the labels in
+$U\setminus\{j\}$ of each $S_j$, by condition (ii) for the given system; match the $s-u$ rows of $P\setminus U$ to the
+$s-u$ labels of $S_j$ in $P\setminus U$ by the same greedy procedure. The reserved cliques use only vertices with
+labels in $U$ and the new edges join vertices with labels in $P\setminus U$, so the counts of forbidden vertices are
+as before, and the bipartite graph of allowed pairs has minimum degree at least $s-u-t^2+1\ge(s-u)/2$ for $s$ large.
+
+Let $\Gamma$ be $\Gamma_0$ with all chosen $t$-cliques removed. The computation of degrees above did not depend on which
+$t$-cliques were chosen, so $\Gamma$ is $K_{t+2}$-balanced. Let $\Gamma'$ be $\Gamma$ with the edges of the reserved full
+cliques removed. A full clique has one vertex in every part, so removing it lowers the degree of each of its vertices
+into each other part by exactly one, and lowers $e(V_a,V_b)$ by exactly one for every pair of parts. A vertex lying in
+$m$ reserved cliques therefore loses $m$ neighbours in every other part, and $\Gamma'$ is still $K_{t+2}$-balanced. A
+vertex lies in at most $u-1$ reserved cliques: a row or an ordinary column in $U$ lies in at most $u-1$ cells with row
+and column in $U$, a symbol occurs at most once in each column, and there are at most $u-1$ ordinary columns in $U$.
+So every vertex of $\Gamma'$ has at most $t+u$ non-neighbours in each other part. For $s\ge2t$ every part has at least
+$s/2$ vertices, so every density of $\Gamma'$ is at least $1-2(t+u)/s$, and the computation for typicality above, with
+these two bounds in place of $t+1$ and $1-t/s$, shows that $\Gamma'$ is $(c,h^q)$-typical once $s\ge4h^q(t+u)$ and
+$s\ge4(t+u)/c$. Theorem~\ref{thm:keevash} gives a partite
+$K_{t+2}$-decomposition of $\Gamma'$, and together with the reserved cliques this is a $\MOAS(s,t)$ whose cells in $U$
+are those of the given system, which is therefore a subsystem on $U$.
+\end{proof}
+
+\section*{Acknowledgements and funding}
+The research presented in this paper was supported by the European Research Council (ERC) under the European Union's
+Horizon Europe research and innovation programme (grant agreement No.~101041711), by the Simons Foundation as part of
+the Collaboration on the Mathematical and Scientific Foundations of Deep Learning, by Heights Labs, by Convex Nexus
+Capital, by the Israel Science Foundation (grant number 2258/19), and by the Israel Science Foundation (ISF Grant
+4101/25).
+
+This work was done by multiple AI agents, Claude (Anthropic) and Codex (OpenAI), connected to Math Brain~\cite{MathBrainRepo}
+and working together inside the Brain framework~\cite{BrainFramework}, a shared, persistent memory in which the agents
+record claims, proofs, failed attempts and methods, retrieve one another's results, coordinate who works on what, and
+audit each other's work. For more on the details behind the Brain and Math Brain, see the Math Brain
+paper~\cite{MathBrainPaper}, the Math Brain repository~\cite{MathBrainRepo} and the Brain framework
+repository~\cite{BrainFramework}.
+
+\section*{Declaration of competing interest}
+The author holds equity in Heights Labs and in Convex Nexus Capital and has a management role at Convex Nexus Capital.
+These entities are included in the funding declaration above.
+
+\section*{Declaration of generative AI and AI-assisted technologies}
+Array-bic squares, their orthogonality, Question (Q3) and the $\MOAS(3,3)$ are due to Adriaensen, Bamberg and
+Williford~\cite{ABW}; the decomposition theorem used in Section~\ref{sec:large} is due to Keevash~\cite{KeevashCD,KeevashII}.
+A Codex agent (OpenAI) found the four base records of Section~\ref{sec:ten}, the family of Section~\ref{sec:family}, the
+bound of Theorem~\ref{thm:bound} and the argument of Section~\ref{sec:large}. Claude Opus~5.5 (Anthropic) wrote the
+proof of Lemma~\ref{lem:dev} and the proofs of Theorems~\ref{thm:ten} and~\ref{thm:family} in the form given here, the
+programs that check them and the text. The author directed the work and is responsible for the content of the paper
+and for decisions concerning its dissemination.
+
+\section*{Data availability}
+A program that builds the squares of Theorem~\ref{thm:ten}, and those of Theorem~\ref{thm:family} when each $q_l$ is a
+prime, $8$ or $9$, from the base records and checks Definitions~\ref{def:abs} and~\ref{def:orth} directly is available
+as tag v1.0 (commit 8990388) of the repository\\
+\url{https://github.com/yspennstate/array-bic-squares-order-ten}.
+
+\clearpage
+\appendix
+\section{Notation}
+\begin{center}\scriptsize
+\begin{tabular}{l p{6.4cm} p{2.6cm}}
+\toprule
+Symbol & Meaning & First defined\\
+\midrule
+$\MOAS(s,t)$ & $t$ mutually orthogonal array-bic squares of order $s$ & Section~\ref{sec:intro}\\
+$P$, $s$ & point set, $|P|$ & Section~\ref{sec:def}\\
+$0$ & the symbol zero, not a point & Section~\ref{sec:def}\\
+$A_i$, $i$ & array-bic square, its position & Definition~\ref{def:abs}\\
+$R$, $C$, $j$ & row, column and output coordinates of a tuple & Section~\ref{sec:def}\\
+$N_{\alpha\beta}(p,q)$ & number of tuples with coordinates $\alpha,\beta$ equal to $p,q$ & Section~\ref{sec:def}\\
+$G$, $I$, $\iota_k$ & abelian group, set of positions, a position & Section~\ref{sec:dev}\\
+$F$ & fixed values $I\cup\{0\}$ & Section~\ref{sec:dev}\\
+$r$, $r+g$, $B$ & record, its translate, list of base records & Section~\ref{sec:dev}\\
+$T$ & the six tuples of the $\MOAS(3,3)$ & Lemma~\ref{lem:dev}\\
+$o_u$ & the point $u\in\mathbb F_7$ & Section~\ref{sec:ten}\\
+$\sigma$, $\rho$ & relabelling of order $3$, its action on records & Section~\ref{sec:ten}\\
+$n$, $q_l$, $H$ & $s=7n+3$, prime powers with product $n$, $\prod\mathbb F_{q_l}$ & Section~\ref{sec:family}\\
+$c_k$, $\varphi_k$, $G^*$, $E_d$ & scalars in $H$, maps $(a,h)\mapsto(ka,c_kh)$, $\{(a,h):h\ne0\}$, line record & Section~\ref{sec:family}\\
+$U$, $u$ & point set of a subsystem, its size & Definition~\ref{def:sub}\\
+$t$ & number of squares & Section~\ref{sec:intro}\\
+$X$, $Y$, $S_j$ & parts for rows, ordinary columns, positive symbols & Section~\ref{sec:large}\\
+$\Gamma_0$, $\Gamma$, $\Gamma'$ & encoding graph, after the columns of the positions, after reserved cliques & Section~\ref{sec:large}\\
+$V_a$, $K_q$, $N(v)$ & a part, the complete graph on $q$ vertices, neighbourhood of a vertex $v$ & Section~\ref{sec:large}\\
+$w$ & a vertex of the part $S_j$ being matched & Section~\ref{sec:large}\\
+$d_{ab}$, $h$, $\delta$, $c$, $c_0$ & density of a pair of parts; constants of Theorem~\ref{thm:keevash} & Section~\ref{sec:large}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{thebibliography}{99}
+\bibitem{ABW} S.~Adriaensen, J.~Bamberg, J.~Williford, On configurations that are nearly generalised polygons, preprint (2026), arXiv:2611.17855.
+\bibitem{BiggsIto} N.~L.~Biggs, T.~Ito, Graphs with even girth and small excess, Math. Proc. Cambridge Philos. Soc. 88 (1980), 1--10.
+\bibitem{KeevashII} P.~Keevash, The existence of designs II, preprint (2018), arXiv:1802.05900.
+\bibitem{KeevashCD} P.~Keevash, Coloured and directed designs, in: Building Bridges II, Bolyai Soc. Math. Stud. 28, Springer, Berlin, 2019, 279--315; theorem numbers as in arXiv:1807.05770.
+\bibitem{Payne} S.~E.~Payne, On the non-existence of a class of configurations which are nearly generalized $n$-gons, J. Combin. Theory Ser. A 12 (1972), 268--282.
+\bibitem{BrainFramework} Y.~Shmalo, \emph{Brain Framework}, public software repository, 2026, \url{https://github.com/yspennstate/brain-framework-public}.
+\bibitem{MathBrainRepo} Y.~Shmalo, \emph{Math Brain: public snapshot, code and tests}, 2026, \url{https://github.com/yspennstate/math-brain-public}.
+\bibitem{MathBrainPaper} Y.~Shmalo, \emph{Math Brain: shared, auditable memory for multi-agent mathematical research}, October 2026, doi:10.5281/zenodo.24150837, \url{https://github.com/yspennstate/math-brain-public/tree/main/papers/math-brain-2026-10-24}.
+\end{thebibliography}
+\end{document}
